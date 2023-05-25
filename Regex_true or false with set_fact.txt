@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  vars:
+    domain_names:
+      - 'JWJGTCAT4252.CSCINFO.COM-443-VIP'
+      - 'JWJGTCAT4252.CSCINFO.COM-443-VIP'
+       
+  tasks:
+  - name: Validate domain names
+    ansible.builtin.set_fact:
+      domain_out: "{{domain_out | default({}) | combine({ item: (item is match(domain_regex)) })}}"
+    loop: "{{ domain_names }}"
+    loop_control:
+      loop_var: item
+    vars:
+      domain_regex: '^[\w]+[\.]+[A-Z]+[\.]+[A-Z]$'
+      
+
+  - debug:
+      msg: "{{ domain_out }}"
+
+
