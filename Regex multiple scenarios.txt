@@ -1,0 +1,76 @@
++91 tho strt, after . undali
+10
+
++91.8034567891 
+
+^[+91]+[\.]+[8][0-9]{9}$
+
+Uppercase/lowercase, next single digit, one more small alphabets
+^[A-Z]*+[\d]{1}+[a-z]*
+
+it should accept email id
+
+arjun123@gmail.com
+arjun_123@gmail.com
+ar_jun123@gmail.com
+
+^[a-zA-z0-9]+[@]+[a-z]*[\.][a-z]{3}
+
+
+Example -2 
+------------------
+https://www.geeksforgeeks.org/
+
+[a-z]+[\:]+[\//][a-z]+[\.]{3,3}[\/]
+
+Example - 3
+-----------------
+JWJGTCAT4252.CSCINFO.COM-443-VIP
+JWJGTCAT4252.CSCINFO.COM-80-VIP
+
+Need to print the output till .COM
+
+        "{'JWJGTCAT4252",
+        "{'JWJGTCAT4252"
+
+
+ex-4 :- 
+Type the expression to select individual letters, numbers, spaces, and special characters in the text. 
+The expression you type must match any character.
+
+regex: az AZ 09 _- = !? ., :;
+answer: .
+
+ex-5: -
+Write down the expression that will match anything other than the words beor and beur in the text. 
+Do this using the negated character set.
+
+Text: bear beor beer beur
+regex: be[^ou]r
+
+Repetitions:
+-------------------------------------------
+Some special characters are used to specify how many times a character will be repeated in the text. These special characters are the plus +, the asterisk *, and the question mark ?.
+
+
+Asterisk *
+------------------------------------
+We put an asterisk * after a character to indicate that the character may either not match at all or can match many times. For example, indicate that the letter e should never occur in the text, or it can occur once or more side by side.
+
+Text: br ber beer
+Regex: be*r 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
