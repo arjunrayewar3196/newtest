@@ -1,3 +1,5 @@
+https://www.atlantic.net/dedicated-server-hosting/how-to-install-sonatype-nexus-repository-manager-on-oracle-linux-8/
+
 apt-get update -y
 
 echo "Install Java"
