@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  vars:
+#    common_name: Jyoshna
+#    vip_domain_name: csc
+    vip_url: Jyoshna.cscinfo.com
+    common_name: "{{ vip_url.split('.')[0] }}"
+    vip_domain_name: '{{ vip_url | regex_search("(\w+\.\w+)$") }}'
+  tasks:
+  - name: 'Set VIP Hostname off of Survey Values'
+    ansible.builtin.set_fact:
+      vip_hostname: '{{ [common_name + "." + vip_domain_name] }}'
+#    vars: 
+#      common_name: "{{ vip_url.split('.')[0] }}"
+#      vip_domain_name: '{{ vip_url | regex_search("(\w+\.\w+)$") }}'
+
+  - debug:
+      msg: "{{ vip_hostname }}"
