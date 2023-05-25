@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  vars:
+    email_employee: 'sample_123@gmail.com'
+  tasks:
+  - name: Email Id checking correct or not
+    ansible.builtin.assert:
+      that: email_employee is defined != '' and email_employee is match(_email_regex)
+      fail_msg: "FAILED"
+      success_msg: "SUCCESS ---> {{ email_employee }}"
+    vars:
+      _email_regex: '^[\w]+[@]+[a-z]*[\.][a-z]{3}'
