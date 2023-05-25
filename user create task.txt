@@ -1,0 +1,37 @@
+192.168.56.10
+
+
+
+
+
+ansible_connection: local
+ansible_python_interpreter: '{{ ansible_playbook_python }}'
+
+
+
+1. Prepare playbook to 
+
+user_names
+
+create users in the rhel server, 
+by taking users list as input at the time of executing.
+
+Run this from ansible tower using job tempalte.
+
+2. Prepare another playbook to provide sudo permissions to those users - run this as 2nd job template.
+
+ 
+
+Prepare this one in the workflow. 
+
+ 
+
+Let me know once it is completed
+
+
+  - name: 'Split the excluded lgn values from survey and set as fact'
+    ansible.builtin.set_fact:
+      all_lgns_list: "{{ cruft_cleanup_exclude_lgns.split(\n) }}"
+
+getent passwd | grep -q username && echo "User found" || echo "User not found"
+compgen -u | grep -q username && echo "User found" || echo "User not found"
