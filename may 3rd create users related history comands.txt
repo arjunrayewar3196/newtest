@@ -1,0 +1,42 @@
+387  docker exec -it awx_web bash
+  388  ls
+  389  cd /etc/
+  390  ls
+  391  vi netplan/
+  392  cd netplan/
+  393  ls
+  394  vi 01-network-manager-all.yaml 
+  395  cd ../
+  396  netplan try
+  397  ip addr
+  398  docker exec -it awx_web bash
+  399  ls /etc/ssh/
+  400  vi /etc/ssh/ssh_config.d/
+  401  vi /etc/ssh/ssh_config
+  402  systemctl restart sshd
+  403  systemctl status sshd
+  404  service status sshd
+  405  service sshd status
+  406  service ssh status
+  407  systemctl status ssh
+  408  systemctl restart ssh.service
+  409  systemctl restart /etc/init.d/
+  410  cat /etc/init.d/
+  411  cd /etc/init.d/
+  412  ls
+  413  systemctl list-unit-files --type service -all
+  414  systemctl list-unit-files --type service -all | grep ssh
+  415  ssh
+  416  sudo apt-get install openssh-server
+  417  sudo systemctl enable ssh
+  418  sudo systemctl status ssh
+  419  cd ../
+  420  ls
+  421  cd ../
+  422  cd ~
+  423  cd /etc/ssh/sshd_config
+  424  cd /etc/ssh/
+  425  ls
+  426  vi sshd_config
+  427  vim sshd_config
+  428  history
