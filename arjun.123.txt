@@ -1,0 +1,45 @@
+list ---> []
+
+ 
+
+array ---> a=[a,b,c]
+
+ 
+
+{} ---> dictionaries/objects
+
+ 
+
+[{}]
+
+ 
+
+dictionary? ---> key:value (pair)
+ex: [{Name:Chinna}]
+
+ 
+
+lists & dictionaries example link
+-----------------------------------
+https://www.middlewareinventory.com/blog/ansible-dict/
+https://www.sbarjatiya.com/notes_wiki/index.php/Working_with_lists_and_dictionary_variables_in_ansible
+
+ 
+
+Split example link 
+-------------------------------------
+https://www.middlewareinventory.com/blog/ansible-split-examples/
+
+ 
+
+map attribute example link
+
+ 
+
+https://www.middlewareinventory.com/blog/ansible-map/
+
+ 
+
+
+select is to filter elements/objects of a simple list  [x,y,z,1,2,3]
+selectattr is to filter elements/objects of list with nested objects [{},{},{}]
