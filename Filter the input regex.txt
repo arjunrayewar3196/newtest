@@ -1,0 +1,29 @@
+Filter the input till .COM
+
+---
+- hosts: localhost
+  vars:
+    domain_names:
+      - 'JWJGTCAT4252.CSCINFO.COM-443-VIP'
+      - 'JWJGTCAT5652.CSCINFO.COM-80-VIP'
+      - 'abc123.CSCINFO.COM-8080-VIP'
+      - 'ABC.456.CSCINFO.COM-22-VIP'
+  tasks:
+  - name: Validate domain names
+    ansible.builtin.set_fact:
+      domain_out: "{{ domain_names | default({}) | map('regex_replace', '-\\d+-\\w+', '') | list }}"
+
+  - name: Print the output
+    debug:
+      msg: "{{ domain_out }}"
+
+output
+--------------------
+ok: [localhost] => {
+    "msg": [
+        "JWJGTCAT4252.CSCINFO.COM",
+        "JWJGTCAT5652.CSCINFO.COM",
+        "abc123.CSCINFO.COM",
+        "ABC.456.CSCINFO.COM"
+    ]
+}
