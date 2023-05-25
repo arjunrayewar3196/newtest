@@ -1,0 +1,7 @@
+ 89  sudo vi /lib/systemd/system/docker.service
+   90  sudo systemctl daemon-reload
+   91  sudo systemctl docker restart
+   92  sudo service docker restart
+   93  clear
+   94  systemctl docker status
+   95  systemctl status docker
