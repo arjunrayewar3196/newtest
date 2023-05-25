@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars:
+    ph_no: '+91.8099331395'
+  tasks:
+  - name: 'sce-1 writing the regex scenarios'
+    ansible.builtin.assert:
+      that: ph_no is defined != '' and ph_no is match(_ph_no_regex)
+      fail_msg: "Phone number is not met up to the requirement"
+    vars:
+    _ph_no_regex: '^[+91]+[\.]+[8][0-9]{9}$'
