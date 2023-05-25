@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  vars:
+    name_employee: JYO1shna
+  tasks:
+  - name: 'Scenario-2: 1st should be Uppercase one or more,next single digit,one or more lowercase'
+    ansible.builtin.assert:
+      that: name_employee is defined != '' and name_employee is match(_name_employee_regex)
+      fail_msg: "FAILED ---> The condition is failed"
+      success_msg: "SUCCESS ---> The condition is met {{ name_employee }}"
+    vars:
+      _name_employee_regex: '^[A-Z]*[\d]{1}[a-z]*'
